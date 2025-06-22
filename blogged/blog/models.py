@@ -10,5 +10,8 @@ class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)  # Automatically set the date when the post is created
 
+    class Meta:
+        ordering = ("-created_at",)  # Order posts by creation date, newest first
+
     def __str__(self):
         return self.title

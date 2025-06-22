@@ -5,5 +5,13 @@
 {% block title %}Blogged{% endblock %}
 
 {% block content %}
-front page
+    <div class="grid grid-cols-3 gap-6">
+        {% for post in posts %}
+            <div class="p-6 bg-gray-100">       
+                <h2 class="text-xl">{{ post.title }}</h2>
+                <a href="{% url 'detail' post.slug %}" class="text-emerald-700">Read more</a> <!-- href="#" is used to define an anchor link, 
+                                                                   # which is used to scroll to a specific place on the same page -->
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
